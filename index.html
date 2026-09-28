@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKA Bahasa Inggris Kelas XII | E-Money & Cashless Society CBT Exam</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f0f9ff',
+            100: '#e0f2fe',
+            500: '#0284c7',
+            600: '#0369a1',
+            700: '#075985',
+            800: '#0c4a6e',
+            900: '#082f49',
+          },
+          fintech: {
+            gold: '#f59e0b',
+            emerald: '#10b981',
+            blue: '#2563eb',
+            indigo: '#4f46e5',
+            purple: '#7c3aed',
+            darkBg: '#0b0f17',
+            darkCard: '#111827'
+          }
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          sci: ['"Space Grotesk"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.7);
+}
+
+.glow-card {
+  box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.15);
+}
+.dark .glow-card {
+  box-shadow: 0 0 30px -5px rgba(37, 99, 235, 0.25);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.6), rgba(245, 158, 11, 0.5), rgba(16, 185, 129, 0.5));
+  padding: 1.5px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #resultModal, #resultModal * {
+    visibility: visible;
+  }
+  #resultModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+</style>
+</head>
+
+<body class="bg-slate-50 dark:bg-fintech-darkBg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col antialiased">
+
+<!-- HEADER / NAVBAR -->
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+    
+    <!-- Title & Logo -->
+    <div class="flex items-center gap-3 cursor-pointer" onclick="showLandingCover()">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-amber-500 flex items-center justify-center text-white text-lg shadow-md shadow-blue-500/20 font-bold">
+        <i class="fa-solid fa-wallet"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800">TKA Bahasa Inggris</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:inline">Kelas XII SMA/MA</span>
+        </div>
+        <h1 class="text-base sm:text-lg font-bold font-sci tracking-tight text-slate-900 dark:text-white leading-tight">
+          CBT Argumentative Text: E-Money & Cashless Society
+        </h1>
+      </div>
+    </div>
+
+    <!-- Quick Action Controls -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Return to Front Cover -->
+      <button onclick="showLandingCover()" title="Halaman Depan / Profil" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-id-card text-amber-500"></i>
+        <span class="hidden md:inline">Cover / Profil</span>
+      </button>
+
+      <!-- Exam vs Practice Mode Toggle -->
+      <button id="modeToggleBtn" title="Ganti Mode (Ujian / Latihan Pembahasan)" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5">
+        <i class="fa-solid fa-graduation-cap text-blue-500"></i>
+        <span id="modeLabel" class="hidden md:inline">Mode: Ujian (Exam)</span>
+      </button>
+
+      <!-- Font Size Adjuster -->
+      <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700">
+        <button id="fontDecBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-blue-500 font-bold" title="Kecilkan Teks">A-</button>
+        <span class="text-[10px] text-slate-400 px-1">|</span>
+        <button id="fontIncBtn" class="px-2 py-1 text-xs text-slate-600 dark:text-slate-300 hover:text-blue-500 font-bold" title="Besarkan Teks">A+</button>
+      </div>
+
+      <!-- Timer Display (90 Minutes) -->
+      <div class="flex items-center gap-2 bg-amber-500/10 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 text-xs font-mono font-bold">
+        <i class="fa-regular fa-clock"></i>
+        <span id="timerDisplay">90:00</span>
+      </div>
+
+      <!-- Dark Mode Switch -->
+      <button id="themeToggleBtn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-amber-500 transition">
+        <i id="themeIcon" class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- LANDING PAGE / FRONT COVER SECTION -->
+<section id="landingCoverSection" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full transition-all duration-300">
+  <div class="gradient-border shadow-2xl overflow-hidden bg-slate-900 text-white">
+    <div class="relative p-6 sm:p-10 md:p-12 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 rounded-[1.2rem]">
+      
+      <!-- Ambient Lights -->
+      <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Left Banner Description -->
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-fire text-amber-400"></i> TES KEMAMPUAN AKADEMIK (TKA) SMA/MA
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-200 to-amber-300 leading-tight">
+            BAHASA INGGRIS <br>
+            <span class="text-2xl sm:text-3xl lg:text-4xl font-sci text-white font-bold">KELAS XII • 30 SOAL HOTS</span>
+          </h1>
+
+          <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm text-slate-300 space-y-2">
+            <div class="font-bold text-amber-400 font-sci text-base flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-shield-halved"></i> Topic: Argumentative Text on E-Money & Cashless Society
+            </div>
+            <p class="leading-relaxed">
+              Ujian CBT Interaktif berisi <strong>30 Soal HOTS</strong> (Level C4-C6 Bloom) yang terbagi dalam 6 Wacana Argumentatif mendalam: Cybersecurity, Financial Inclusion, Spending Psychology, Sovereignty, MSMEs, dan CBDCs.
+            </p>
+          </div>
+
+          <!-- Feature Specs -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 pt-1">
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-stopwatch text-blue-400 text-base"></i>
+              <span>Durasi 90 Menit</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
+              <i class="fa-solid fa-brain text-amber-400 text-base"></i>
+              <span>30 Soal HOTS (A-E)</span>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50 col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-chart-pie text-emerald-400 text-base"></i>
+              <span>Pembahasan Instan</span>
+            </div>
+          </div>
+
+          <!-- Author Info -->
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-amber-500 flex items-center justify-center text-white font-bold shadow-lg">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="text-left text-xs">
+              <div class="text-blue-400 font-mono font-semibold text-[10px] uppercase">Penyusun & Pengembang</div>
+              <div class="text-sm font-bold text-white">Asep Subagja, S.Pd</div>
+              <div class="text-slate-400">SMAN 1 Ciracap • Tahun 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Student Form -->
+        <div class="lg:col-span-5 bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 rounded-2xl border border-blue-500/30 shadow-2xl space-y-4">
+          <div class="border-b border-slate-800 pb-3">
+            <h3 class="text-lg font-bold font-sci text-white flex items-center gap-2">
+              <i class="fa-solid fa-id-card text-blue-400"></i> Registrasi Peserta Ujian
+            </h3>
+            <p class="text-xs text-slate-400">Masukkan identitas lengkap Anda sebelum memulai pengerjaan.</p>
+          </div>
+
+          <form id="studentDataForm" onsubmit="handleStartExam(event)" class="space-y-3.5 text-left">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Nama Lengkap Siswa</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="studentNameInput" required placeholder="Contoh: Muhammad Farhan" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Kelas / Jurusan</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-graduation-cap"></i></span>
+                  <input type="text" id="studentClassInput" required placeholder="XII MIPA 1" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">NISN / No. Ujian</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-hashtag"></i></span>
+                  <input type="text" id="studentNisnInput" placeholder="0061234567" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Asal Sekolah</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><i class="fa-solid fa-school"></i></span>
+                <input type="text" id="studentSchoolInput" required value="SMAN 1 Ciracap" class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-blue-500 transition">
+              </div>
+            </div>
+
+            <div class="pt-2 space-y-2">
+              <button type="submit" class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-amber-500 hover:from-blue-500 hover:to-amber-400 text-white font-extrabold text-sm uppercase tracking-wider transition shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-play-circle text-lg"></i> Mulai Ujian TKA (90 Menit)
+              </button>
+              
+              <button type="button" onclick="startPracticeDirectly()" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-blue-400"></i> Masuk Mode Latihan & Pembahasan Instan
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC PILLS NAVBAR -->
+<div id="topicNavBar" class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-2.5 px-4 sm:px-6 lg:px-8 shadow-sm hidden">
+  <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto pb-1 text-xs no-scrollbar" id="topicPillsContainer">
+    <!-- Generated dynamically -->
+  </div>
+</div>
+
+<!-- MAIN CBT WORKSPACE -->
+<main id="examWorkspace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- LEFT PANEL: Reading Passage Reader (6 Columns) -->
+    <section class="lg:col-span-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-sm sticky top-20 max-h-[78vh] flex flex-col">
+      <!-- Story Header -->
+      <div class="flex items-center justify-between gap-2 pb-3.5 border-b border-slate-100 dark:border-slate-800 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span id="storyTag" class="px-2.5 py-1 text-xs font-bold rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+            Text 1 of 6
+          </span>
+          <span id="storyThemeBadge" class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+            Cybersecurity & Digital Wallets
+          </span>
+        </div>
+        <div class="text-xs text-slate-400 font-mono">
+          Questions <span id="storyQRange" class="font-bold text-slate-700 dark:text-slate-200">1 - 5</span>
+        </div>
+      </div>
+
+      <!-- Story Title & Content -->
+      <div id="storyTitle" class="text-lg sm:text-xl font-bold font-sci text-blue-700 dark:text-blue-300 mt-3 mb-2">
+        Text 1 — Economic Efficiency vs. Cybersecurity Vulnerabilities
+      </div>
+
+      <div id="storyBody" class="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed space-y-3 overflow-y-auto pr-2 flex-1 font-sans text-justify">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Footer Story Tools -->
+      <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span><i class="fa-solid fa-book-open mr-1 text-blue-500"></i> Read carefully before choosing options</span>
+        <button id="scrollToTopStory" class="hover:text-blue-500 transition">Top <i class="fa-solid fa-arrow-up ml-1"></i></button>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: Question Panel & Matrix (6 Columns) -->
+    <section class="lg:col-span-6 space-y-6">
+      
+      <!-- QUESTION CARD -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-md relative glow-card">
+        
+        <!-- Card Header -->
+        <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <span id="qNumberBadge" class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold font-mono text-sm flex items-center justify-center shadow">
+              Q1
+            </span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+              TKA HOTS Question
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- Flag button -->
+            <button id="flagBtn" class="px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1">
+              <i class="fa-solid fa-bookmark"></i>
+              <span id="flagText" class="hidden sm:inline">Ragu-ragu</span>
+            </button>
+            
+            <span id="skillBadge" class="text-[11px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+              Author's Stance (C5)
+            </span>
+          </div>
+        </div>
+
+        <!-- Question Prompt -->
+        <div id="qPrompt" class="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-100 my-4 leading-snug">
+          What is the author's primary argument regarding the transition to a cashless society?
+        </div>
+
+        <!-- Options Container -->
+        <div id="qOptions" class="space-y-2.5 my-4">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Instant Feedback Box (Practice Mode) -->
+        <div id="feedbackBox" class="hidden my-4 p-4 rounded-xl text-xs sm:text-sm leading-relaxed border">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <button id="prevQBtn" class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed">
+            <i class="fa-solid fa-chevron-left"></i> Previous
+          </button>
+
+          <button id="nextQBtn" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/20">
+            Next <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION PALETTE GRID -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm space-y-3.5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-grip text-blue-500"></i> Question Matrix (1 - 30)
+          </h3>
+          <span id="answeredCount" class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
+            0 / 30 Terjawab
+          </span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+          <div id="progressBar" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-amber-500 h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <!-- Grid Matrix -->
+        <div id="paletteGrid" class="grid grid-cols-6 sm:grid-cols-10 gap-2 pt-1">
+          <!-- 30 Buttons generated by JS -->
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center justify-center gap-3.5 text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-blue-600 inline-block"></span> Aktif</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Terjawab</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> Ragu-ragu</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-200 dark:bg-slate-800 border inline-block"></span> Kosong</span>
+        </div>
+
+        <!-- Submit Test Button -->
+        <div class="pt-2">
+          <button id="finishTestBtn" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-blue-600 hover:from-amber-600 hover:to-blue-700 text-white font-extrabold text-sm uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Selesaikan & Hitung Nilai TKA
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- TEST RESULTS MODAL -->
+<div id="resultModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl space-y-6">
+    
+    <!-- Modal Header -->
+    <div class="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+      <div>
+        <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          Laporan Resmi Hasil Ujian TKA
+        </span>
+        <h2 class="text-2xl font-black font-sci text-slate-900 dark:text-white mt-2">
+          Ringkasan Performa Akademik Siswa
+        </h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Nama: <strong id="resStudentName" class="text-slate-800 dark:text-slate-200">-</strong> | 
+          Kelas: <span id="resStudentClass">-</span> | 
+          Sekolah: <span id="resStudentSchool">-</span>
+        </p>
+      </div>
+      <button id="closeModalBtn" class="no-print text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl font-bold p-2">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Score Metrics Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-blue-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-blue-600 dark:text-blue-400 font-semibold uppercase tracking-wider">Nilai Akhir (Skala 100)</div>
+        <div id="finalScoreVal" class="text-4xl sm:text-5xl font-extrabold font-display text-blue-600 dark:text-blue-300 my-1">
+          0 / 100
+        </div>
+        <div id="finalPercentage" class="text-sm font-bold text-slate-600 dark:text-slate-300">0 dari 30 Soal Benar</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-amber-600 dark:text-amber-400 font-semibold uppercase tracking-wider">Tingkat Kemampuan HOTS</div>
+        <div id="gradeBadge" class="text-2xl font-black text-amber-600 dark:text-amber-300 my-2">
+          Kategori: -
+        </div>
+        <div id="gradeDesc" class="text-xs text-slate-500 dark:text-slate-400">Analisis kemampuan literasi argumentatif</div>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 p-5 rounded-2xl text-center">
+        <div class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">Statistik Pengerjaan</div>
+        <div id="timeTakenVal" class="text-xl font-bold text-slate-800 dark:text-slate-200 my-2">
+          00:00 Waktu
+        </div>
+        <div id="answeredRatio" class="text-xs text-slate-500 dark:text-slate-400">30 Soal Dijawab</div>
+      </div>
+    </div>
+
+    <!-- Detailed Item Review -->
+    <div class="space-y-4">
+      <h3 class="text-base font-bold text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center justify-between">
+        <span><i class="fa-solid fa-magnifying-glass text-blue-500 mr-2"></i> Kunci Jawaban & Pembahasan Rasional HOTS</span>
+        <span class="text-xs font-normal text-slate-500">30 Soal Pilihan Ganda</span>
+      </h3>
+      <div id="reviewContainer" class="space-y-4 max-h-[380px] overflow-y-auto pr-2">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+      <div class="text-xs text-slate-500">
+        Penyusun Ujian: <strong>Asep Subagja, S.Pd</strong> (SMAN 1 Ciracap - 2026)
+      </div>
+      <div class="flex items-center gap-2 no-print">
+        <button id="printResultBtn" class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-print"></i> Cetak PDF / Rapor
+        </button>
+        <button id="restartTestBtn" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-rotate-right"></i> Ulangi Ujian
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CUSTOM DIALOG MODAL -->
+<div id="customDialogModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 text-center">
+    <div id="dialogIconContainer" class="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-xl bg-amber-500/10 text-amber-500">
+      <i class="fa-solid fa-circle-question"></i>
+    </div>
+    <h3 id="dialogTitle" class="text-lg font-bold font-sci text-slate-900 dark:text-white">Konfirmasi Ujian</h3>
+    <p id="dialogMessage" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Apakah Anda yakin?</p>
+    <div id="dialogActions" class="flex items-center justify-center gap-3 pt-2">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="mt-auto bg-slate-900 text-slate-400 text-xs py-5 border-t border-slate-800 text-center">
+  <div class="max-w-7xl mx-auto px-4 space-y-1.5">
+    <p class="font-sci text-blue-400 font-semibold">TKA Bahasa Inggris Kelas XII SMA/MA • Argumentative Text on E-Money & Cashless Society</p>
+    <p>Pengembang / Author: Asep Subagja, S.Pd — SMAN 1 Ciracap (2026)</p>
+  </div>
+</footer>
+
+<script>
+const dataset = [
+  {
+    topicId: 1,
+    topicName: "Cybersecurity",
+    storyTitle: "Text 1 — Economic Efficiency vs. Cybersecurity Vulnerabilities in Digital Wallets",
+    storyParagraphs: [
+      "The rapid transition toward a cashless economy, propelled by the ubiquity of electronic wallets and contactless cards, is frequently hailed as an inevitable milestone of modern financial evolution. Advocates emphasize that e-money dramatically reduces transactional friction, curtails the administrative costs associated with minting physical currency, and deters cash-related illicit activities. However, framing digital payment systems solely as a triumph of convenience overlooks a critical vulnerability: the systemic dependence on digital infrastructure and the compounding risks of cyber exploitation.",
+      "When cash serves as the primary medium of exchange, transaction security is localized and tangible. Conversely, electronic money operates within interconnected network servers, financial clouds, and third-party API gateways. A localized power outage or a sophisticated DDoS (Distributed Denial of Service) attack can instantly paralyze an entire municipality's commerce, leaving citizens incapable of securing essential provisions. Furthermore, centralized digital databases consolidate vast amounts of personal financial data, transforming financial institutions into prime targets for global threat actors.",
+      "Proponents of e-money counter that advanced encryption algorithms and biometric authentication provide robust safeguards that surpass the physical security of a leather wallet. While technically valid, this counter-argument underestimates the human factor in cybersecurity. Social engineering, phishing scams, and algorithmic fraud exploit psychological vulnerabilities rather than technical flaws, rendering even the most sophisticated cryptographic protections ineffective. Therefore, while embracing digital payments offers undeniable economic agility, total elimination of cash remains a risky gamble that jeopardizes national financial resilience."
+    ],
+    questions: [
+      {
+        qNum: 1,
+        skill: "Author's Stance (C5)",
+        prompt: "What is the author's primary argument regarding the transition to a cashless society?",
+        options: [
+          "E-money should be immediately abolished due to its inability to prevent fraud.",
+          "Digital wallets offer supreme transactional agility but require total centralization of banks.",
+          "The convenience of e-money must be weighed against severe systemic and cybersecurity risks.",
+          "Physical cash is obsolete because social engineering affects digital transactions exclusively.",
+          "Advanced encryption algorithms have permanently eliminated financial crimes in modern cities."
+        ],
+        correct: "C",
+        explanation: "Paragraf 1 dan 3 menegaskan bahwa meskipun e-money menawarkan efisiensi dan fleksibilitas, mengabaikan kerentanan infrastruktur digital dan risiko siber adalah tindakan berisiko bagi ketahanan nasional."
+      },
+      {
+        qNum: 2,
+        skill: "Analyzing Counterarguments (C4)",
+        prompt: "How does the author counter the claim that biometric security and encryption protect e-money users?",
+        options: [
+          "By presenting statistical evidence showing that biometric systems fail regularly.",
+          "By arguing that human psychological manipulation circumvents technical security measures.",
+          "By proving that encryption algorithms are significantly easier to crack than physical locks.",
+          "By suggesting that physical wallets are less prone to theft than digital applications.",
+          "By demonstrating that municipal power outages occur more frequently than cyberattacks."
+        ],
+        correct: "B",
+        explanation: "Paragraf 3 membantah klaim keamanan enkripsi dengan menjelaskan bahwa serangan siber modern seperti social engineering dan phishing mengeksploitasi celah psikologis manusia, bukan sekadar memecahkan kode enkripsi."
+      },
+      {
+        qNum: 3,
+        skill: "Complex Inference (C5)",
+        prompt: "Based on Paragraph 2, what can be logically inferred about a society that completely eliminates physical cash?",
+        options: [
+          "It will experience a permanent decrease in social engineering and phishing incidents.",
+          "Its financial system becomes exceptionally fragile during severe power or cyber infrastructure failures.",
+          "Small businesses will no longer need to pay administrative fees to commercial banks.",
+          "It guarantees equal financial access for citizens without internet connectivity.",
+          "Third-party payment gateways will no longer collect personal consumer data."
+        ],
+        correct: "B",
+        explanation: "Paragraf 2 menyatakan bahwa mati listrik atau serangan DDoS dapat melumpuhkan perdagangan instan. Inferensi yang tepat adalah masyarakat tanpa uang tunai sangat rentan (fragile) terhadap kegagalan infrastruktur."
+      },
+      {
+        qNum: 4,
+        skill: "Contextual Vocabulary & Tone (C4)",
+        prompt: "The word “ubiquity” in Paragraph 1 is closest in meaning to ... and reflects a tone of ...",
+        options: [
+          "rarity — skepticism",
+          "pervasiveness — objective observation",
+          "complexity — academic criticism",
+          "fragility — alarmist concern",
+          "inefficiency — disapproval"
+        ],
+        correct: "B",
+        explanation: "'Ubiquity' berarti keberadaan di mana-mana (pervasiveness). Penulis menggunakannya untuk mendeskripsikan fenomenadompet digital yang menyebar luas secara objektif."
+      },
+      {
+        qNum: 5,
+        skill: "Evaluating Synthesis (C6)",
+        prompt: "Which policy recommendation best synthesizes the author's final conclusion in Paragraph 3?",
+        options: [
+          "Governments should mandate a complete return to metallic coin minting.",
+          "Central banks ought to maintain cash infrastructure alongside digital payment options as a backup resilience system.",
+          "Financial institutions must eliminate biometric verification in favor of paper receipts.",
+          "Digital payment gateways should be operated exclusively by local municipal councils.",
+          "Consumers should be prohibited from storing financial data on cloud servers."
+        ],
+        correct: "B",
+        explanation: "Penulis menyimpulkan bahwa menghapus uang tunai secara total adalah perjudian berisiko. Sintesis kebijakan yang paling rasional adalah mempertahankan infrastruktur tunai sebagai sistem ketahanan cadangan."
+      }
+    ]
+  },
+  {
+    topicId: 2,
+    topicName: "Financial Inclusion",
+    storyTitle: "Text 2 — Financial Inclusion: Does E-Money Empower or Marginalize Rural Communities?",
+    storyParagraphs: [
+      "Financial inclusion has long been touted as the principal moral justification for expanding digital payment ecosystems into underdeveloped regions. Policy makers argue that mobile banking applications and QR-code payment platforms dismantle geographical barriers, enabling unbanked rural populations to participate in the formal economy without visiting brick-and-mortar institutions. By bypassing traditional credit checks and account minimums, e-money provides marginalized smallholders with direct access to micro-loans, agricultural subsidies, and peer-to-peer remittances.",
+      "However, a deeper socio-economic examination reveals that digital-first financial inclusion often exacerbates pre-existing inequalities, particularly among elderly and digitally illiterate populations. In many agrarian districts, reliable high-speed cellular networks remain a luxury rather than a baseline public utility. When micro-merchants are forced to transition to digital wallets to receive government aid, those lacking smartphone literacy or stable connectivity are effectively disenfranchised. The technological threshold created by e-money replaces physical distance with digital exclusion.",
+      "Furthermore, the commercialized nature of private payment platforms introduces predatory micro-transaction fees and opaque data-harvesting practices. Rural laborers, often unfamiliar with digital terms of service, unwittingly consent to aggressive algorithmic profiling and high-interest micro-credit schemes. Consequently, while digital financial systems broaden nominal access, true financial empowerment requires robust digital literacy initiatives and the preservation of fee-free physical transaction alternatives."
+    ],
+    questions: [
+      {
+        qNum: 6,
+        skill: "Central Thesis (C4)",
+        prompt: "Which statement best captures the central thesis of Text 2?",
+        options: [
+          "E-money has successfully eliminated financial inequality across all rural agricultural districts.",
+          "Digital financial expansion creates nominal access but risks marginalizing digitally illiterate rural populations without proper safeguards.",
+          "Traditional brick-and-mortar banks remain more effective than mobile wallets in delivering agricultural subsidies.",
+          "Private payment platforms should be forbidden from operating in agrarian communities.",
+          "Elderly rural citizens adapt to smartphone banking faster than urban demographic groups."
+        ],
+        correct: "B",
+        explanation: "Teks menjelaskan bahwa meskipun e-money memperluas akses nominal, tanpa literasi digital dan infrastruktur yang adil, hal ini justru memperparah marjinalisasi masyarakat desa."
+      },
+      {
+        qNum: 7,
+        skill: "Evaluating Evidence (C5)",
+        prompt: "What argument does the author use in Paragraph 2 to challenge the optimistic view of financial inclusion?",
+        options: [
+          "Rural smallholders prefer travelling long distances to visit urban bank branches.",
+          "Digital financial platforms charge higher interest rates than unregistered moneylenders.",
+          "Inadequate cellular infrastructure and smartphone illiteracy transform e-money into a barrier rather than a bridge.",
+          "Government subsidies distributed through cash are consistently lost to physical theft.",
+          "Micro-merchants in rural areas refuse to accept government aid under any circumstances."
+        ],
+        correct: "C",
+        explanation: "Paragraf 2 menyoroti bahwa jaringan seluler yang lemah dan ketidakmampuan menggunakan smartphone menciptakan hambatan digital baru (digital exclusion)."
+      },
+      {
+        qNum: 8,
+        skill: "Complex Inference (C5)",
+        prompt: "What can be inferred regarding private e-money platforms operating in rural regions from Paragraph 3?",
+        options: [
+          "They prioritize altruistic community development over corporate profit margins.",
+          "They harvest user data to offer free financial management courses to smallholders.",
+          "They may exploit users' lack of digital literacy through hidden fees and high-interest micro-loans.",
+          "They strictly comply with international transparent data privacy standards.",
+          "They eliminate the need for government oversight in agricultural loan distribution."
+        ],
+        correct: "C",
+        explanation: "Paragraf 3 menyebutkan bahwa platform swasta sering memberlakukan biaya mikro predatori dan skema pinjaman bunga tinggi kepada masyarakat desa yang kurang paham syarat layanan."
+      },
+      {
+        qNum: 9,
+        skill: "Vocabulary in Context (C4)",
+        prompt: "The phrase “disenfranchised” in Paragraph 2 is closest in meaning to ...",
+        options: ["financially rewarded", "deprived of rights/access", "technologically advanced", "legally protected", "geographically relocated"],
+        correct: "B",
+        explanation: "'Disenfranchised' dalam konteks ini berarti dicabut hak atau aksesnya (deprived of rights or financial access)."
+      },
+      {
+        qNum: 10,
+        skill: "Evaluating Practical Solutions (C6)",
+        prompt: "According to the passage, what dual approach is required to achieve genuine financial empowerment in rural areas?",
+        options: [
+          "Banning all private payment applications and enforcing physical-cash-only commerce.",
+          "Combining comprehensive digital literacy programs with the preservation of fee-free physical transaction options.",
+          "Mandating that all rural citizens purchase high-end modern smartphones immediately.",
+          "Replacing municipal credit unions with centralized international banking algorithms.",
+          "Eliminating all micro-loan programs to prevent consumer debt accumulation."
+        ],
+        correct: "B",
+        explanation: "Paragraf terakhir secara tegas menyatakan solusi ganda: pendidikan literasi digital yang kuat serta mempertahankan pilihan transaksi fisik tanpa biaya."
+      }
+    ]
+  },
+  {
+    topicId: 3,
+    topicName: "Spending Psychology",
+    storyTitle: "Text 3 — The Psychology of Frictionless Spending: How E-Money Alters Impulse Control",
+    storyParagraphs: [
+      "In classical economic theory, consumer transactions represent rational evaluations where individuals weigh the utility of a purchase against the immediate loss of monetary capital. The physical exchange of cash embodies what behavioral economists term the 'pain of paying'—a tangible psychological friction caused by visually observing banknotes leaving one's hands. This sensory feedback loop acts as a natural neurological speed bump, prompting reflection and curbing impulsive expenditure.",
+      "The advent of electronic money, biometrics, and single-tap digital wallets intentionally dismantles this psychological friction. By abstracting currency into invisible digital digits on a glowing screen, e-money disconnects the pleasure of immediate consumption from the psychological discomfort of financial loss. Studies in consumer psychology demonstrate that individuals spending via digital channels exhibit significantly higher willingness-to-pay thresholds and register lower recall of their short-term expenditures compared to those using physical cash.",
+      "Furthermore, financial technology corporations leverage gamification—such as instant cashback rewards, digital progress bars, and targeted push notifications—to active dopamine pathways in the consumer brain. This subtle algorithmic nudging encourages continuous micro-spending under the illusion of saving money. Consequently, while frictionless payments optimize transactional speed for commercial enterprises, they systematically erode individual self-regulation, accelerating consumer debt burdens among young adults."
+    ],
+    questions: [
+      {
+        qNum: 11,
+        skill: "Main Claim Analysis (C4)",
+        prompt: "What is the primary psychological phenomenon discussed in the text?",
+        options: [
+          "How physical banknotes increase transaction speeds in commercial enterprises.",
+          "How e-money removes the psychological 'pain of paying', leading to heightened impulse spending.",
+          "Why young adults prefer cash transactions over digital gamification rewards.",
+          "How classical economic theory perfectly predicts modern digital spending patterns.",
+          "Why financial technology corporations fail to generate profits from micro-transactions."
+        ],
+        correct: "B",
+        explanation: "Teks menjelaskan bagaimana e-money menghilangkan rasa 'sakitnya membayar' (pain of paying), sehingga menurunkan kontrol diri dan meningkatkan belanja impulsif."
+      },
+      {
+        qNum: 12,
+        skill: "Evaluating Cause & Effect (C5)",
+        prompt: "According to Behavioral Economics in Paragraph 1, why does physical cash act as a 'speed bump' for spending?",
+        options: [
+          "Physical banknotes take longer to count, causing stores to close early.",
+          "Visually handing over physical paper money creates a sensory feedback that prompts psychological reflection.",
+          "Physical cash carries biological pathogens that deter consumers from touching it.",
+          "Commercial banks charge extra penalty fees whenever physical cash is withdrawn.",
+          "Banknotes are larger in size than electronic smartphone screens."
+        ],
+        correct: "B",
+        explanation: "Paragraf 1 menjelaskan bahwa serah terima uang fisik secara kasat mata menciptakan umpan balik sensorik yang membuat orang berpikir ulang sebelum berbelanja."
+      },
+      {
+        qNum: 13,
+        skill: "Inference on Gamification (C5)",
+        prompt: "What can be inferred about 'cashback rewards and push notifications' mentioned in Paragraph 3?",
+        options: [
+          "They are designed strictly to educate consumers on personal budget discipline.",
+          "They utilize psychological nudges to stimulate repeat spending while masking financial outflow.",
+          "They guarantee that consumers save more money than they actually spend.",
+          "They eliminate bank transaction fees for high-income consumer groups.",
+          "They encourage shoppers to return to physical cash transactions."
+        ],
+        correct: "B",
+        explanation: "Gamifikasi dan notifikasi memanfaatkan dorongan dopamin untuk memicu transaksi berulang dengan ilusi penghematan padahal meningkatkan konsumerisme."
+      },
+      {
+        qNum: 14,
+        skill: "Contextual Vocabulary (C4)",
+        prompt: "The word “frictionless” in the passage refers to payments that are ...",
+        options: [
+          "physically rough and difficult to process",
+          "seamless, rapid, and psychologically effortless",
+          "strictly regulated by government monetary policy",
+          "prone to frequent technical machine errors",
+          "exclusive to high-value international corporations"
+        ],
+        correct: "B",
+        explanation: "'Frictionless' mengacu pada pembayaran digital yang sangat cepat, mulus, dan tanpa hambatan psikologis."
+      },
+      {
+        qNum: 15,
+        skill: "Synthesizing Solutions (C6)",
+        prompt: "Based on the text's critique, which digital wallet feature would best help consumers regain spending self-control?",
+        options: [
+          "Increasing the maximum daily credit limit for tap-to-pay cards.",
+          "Eliminating all transaction history logs from the smartphone screen.",
+          "Implementing artificial 'pacing alerts' or real-time loss visualizations before confirming purchases.",
+          "Adding more colorful animations whenever a purchase is completed.",
+          "Offering higher cashback rewards for late-night impulse purchases."
+        ],
+        correct: "C",
+        explanation: "Untuk mengembalikan hambatan psikologis yang hilang, fitur ideal adalah pemicu jeda (pacing alerts) atau visualisasi pengurangan saldo secara nyata sebelum transaksi disetujui."
+      }
+    ]
+  },
+  {
+    topicId: 4,
+    topicName: "Data Sovereignty",
+    storyTitle: "Text 4 — National Sovereignty and Data Privacy in Global Digital Payment Gateways",
+    storyParagraphs: [
+      "The digitization of payment infrastructure has transformed monetary transactions from a localized state function into a strategic asset within global geopolitics. When citizens utilize multinational e-wallet platforms or international credit card rails, transactional telemetry—encompassing location data, purchasing habits, and real-time capital flows—is processed on cloud servers located outside their home sovereign boundaries. This cross-border data aggregation raises acute concerns regarding national security, foreign economic intelligence, and consumer privacy rights.",
+      "Dependence on foreign payment gateways exposes domestic economies to systemic vulnerabilities. In geopolitical conflicts, multinational payment networks can be weaponized as instruments of economic coercion, instantly severing a nation's access to international trade through targeted digital sanctions. Furthermore, foreign tech conglomerates monetized aggregated financial surveillance data to manipulate consumer markets, giving overseas entities disproportionate leverage over domestic economic stability.",
+      "To mitigate these vulnerabilities, several sovereign nations advocate for 'financial data localization' mandates and the deployment of domestically owned national payment gateways. However, critics argue that aggressive localization risks fragmenting global trade, increasing compliance costs for local merchants, and granting domestic governments intrusive surveillance authority over citizens' personal wealth. Balancing national sovereignty with cross-border commercial efficiency remains one of the defining policy dilemmas of the digital age."
+    ],
+    questions: [
+      {
+        qNum: 16,
+        skill: "Author's Primary Focus (C4)",
+        prompt: "What is the primary focus of Text 4?",
+        options: [
+          "The technical coding protocols required to build mobile payment applications.",
+          "The geopolitical risks and privacy implications of relying on foreign digital payment gateways.",
+          "The environmental impact of running cloud servers for financial institutions.",
+          "Why foreign credit card companies offer lower transaction fees than domestic banks.",
+          "How international tourists utilize e-wallets during cross-border travel."
+        ],
+        correct: "B",
+        explanation: "Teks secara mendalam membahas risiko geopolitik, kedaulatan data finansial, dan masalah privasi saat suatu negara bergantung pada penyedia gerbang pembayaran asing."
+      },
+      {
+        qNum: 17,
+        skill: "Analyzing Geopolitical Risk (C5)",
+        prompt: "According to Paragraph 2, how can multinational digital payment networks be utilized as 'weapons of economic coercion'?",
+        options: [
+          "By increasing the physical weight of foreign currency reserves.",
+          "By unilaterally cutting off a targeted country's access to digital payment channels during conflicts.",
+          "By forcing all foreign citizens to open domestic bank accounts.",
+          "By destroying physical fiber-optic cables underneath the ocean.",
+          "By revealing commercial trade secrets through public radio broadcasts."
+        ],
+        correct: "B",
+        explanation: "Paragraf 2 menjelaskan bahwa jaringan pembayaran multinasional dapat dijadikan sanksi digital instan dengan memutus akses transaksi suatu negara dari perdagangan internasional."
+      },
+      {
+        qNum: 18,
+        skill: "Evaluating Counterarguments (C5)",
+        prompt: "What argument do critics raise against 'financial data localization' in Paragraph 3?",
+        options: [
+          "It makes digital payments completely free of charge for international travelers.",
+          "It could fragment international trade, raise compliance costs, and enable domestic government surveillance.",
+          "It forces domestic merchants to adopt physical silver and gold coins.",
+          "It eliminates all potential cyberattacks from overseas threat actors.",
+          "It guarantees that private tech conglomerates double their annual profits."
+        ],
+        correct: "B",
+        explanation: "Kritikus menepis lokalisasi data ketat karena berisiko memfragmentasi perdagangan global, menaikkan biaya kepatuhan pedagang, serta membuka ruang pengawasan berlebih oleh pemerintah lokal."
+      },
+      {
+        qNum: 19,
+        skill: "Complex Inference (C5)",
+        prompt: "What can be inferred about transactional telemetry collected by foreign e-wallet platforms?",
+        options: [
+          "It consists exclusively of anonymous arithmetic numbers with no commercial value.",
+          "It contains sensitive economic intelligence that can reveal national consumer trends and vulnerabilities.",
+          "It is automatically deleted after 24 hours to comply with international laws.",
+          "It is accessible only to non-profit charitable organizations.",
+          "It prevents foreign nations from applying economic sanctions."
+        ],
+        correct: "B",
+        explanation: "Telemetri transaksi mencakup pola belanja, lokasi, dan aliran modal yang jika diagregasi menjadi intelijen ekonomi bernilai strategis bagi pihak asing."
+      },
+      {
+        qNum: 20,
+        skill: "Synthesizing Policy Dilemma (C6)",
+        prompt: "Which statement best expresses the core dilemma described in the conclusion?",
+        options: [
+          "Choosing between physical cash and metallic coins for agricultural trade.",
+          "Reconciling national security and data sovereignty with global economic integration and transaction efficiency.",
+          "Deciding whether to build cloud servers in rural or urban geographic regions.",
+          "Determining if smartphone cameras are superior to biometric fingerprint scanners.",
+          "Abolishing all foreign trade to eliminate international cyber risks."
+        ],
+        correct: "B",
+        explanation: "Dilema utamanya adalah menyeimbangkan kedaulatan/keamanan data nasional dengan efisiensi integrasi perdagangan internasional."
+      }
+    ]
+  },
+  {
+    topicId: 5,
+    topicName: "MSME Growth",
+    storyTitle: "Text 5 — Cashless Micro-Transactions: Accelerating MSME Growth in Developing Nations",
+    storyParagraphs: [
+      "Micro, Small, and Medium Enterprises (MSMEs) form the economic backbone of developing nations, yet they have historically struggled to secure capital due to their informal operational nature. Traditional commercial banks typically require audited financial statements, physical collateral, and formal credit histories—standards that informal street vendors and small merchants cannot meet. The proliferation of QR-code payment standards and micro-e-wallets has fundamentally disrupted this structural bottleneck.",
+      "When micro-merchants adopt standardized QR payment codes, every cup of coffee sold or repair service rendered generates an immutable, verifiable digital paper trail. Financial technology firms aggregate this transactional telemetry to build alternative credit-scoring algorithms. Rather than evaluating physical property deeds, these algorithms assess cash-flow consistency, sales velocity, and customer retention metrics. Consequently, micro-entrepreneurs gain automated access to collateral-free micro-loans, enabling them to expand inventory and withstand economic shocks.",
+      "Nevertheless, total transition to a cashless micro-economy carries hidden structural burdens for small vendors. Payment gateway operators frequently impose MDR (Merchant Discount Rate) transaction percentage fees that erode already thin profit margins. Furthermore, settlement delays—where digital revenues take 24 to 48 hours to clear into a merchant's bank account—can starve micro-enterprises of immediate daily cash needed to purchase raw market supplies. Thus, regulatory frameworks must cap merchant fees and mandate instant liquidity settlement to safeguard small enterprise viability."
+    ],
+    questions: [
+      {
+        qNum: 21,
+        skill: "Identifying Solution Mechanism (C4)",
+        prompt: "How does e-money help MSMEs overcome traditional credit access barriers according to Text 5?",
+        options: [
+          "By allowing merchants to mint their own private physical coins.",
+          "By generating digital transaction records that fintechs use to create alternative collateral-free credit scores.",
+          "By forcing commercial banks to cancel all loan repayment obligations.",
+          "By providing free physical property deeds to informal street vendors.",
+          "By eliminating customer demand for daily market supplies."
+        ],
+        correct: "B",
+        explanation: "Paragraf 2 menjelaskan bahwa QR-code menghasilkan jejak digital transaksi yang diolah algoritma fintech menjadi skor kredit alternatif tanpa agunan fisik."
+      },
+      {
+        qNum: 22,
+        skill: "Evaluating Economic Trade-offs (C5)",
+        prompt: "What double-edged sword do micro-merchants face when adopting digital payment gateways?",
+        options: [
+          "Gaining wider customer reach while suffering complete loss of internet access.",
+          "Unlocking automated credit scoring while enduring profit erosion from transaction fees and liquidity settlement delays.",
+          "Receiving immediate government grants while being forced to double product prices.",
+          "Eliminating daily inventory costs while paying higher physical rent to landlords.",
+          "Increasing daily cash flow while losing all digital sales records."
+        ],
+        correct: "B",
+        explanation: "Pedagang mikro diuntungkan oleh akses kredit gampang, namun tertekan oleh potongan biaya MDR (Merchant Discount Rate) dan penundaan cairan dana (settlement delays)."
+      },
+      {
+        qNum: 23,
+        skill: "Analyzing Structural Terminology (C4)",
+        prompt: "What does 'settlement delay' in Paragraph 3 refer to, and why is it problematic for micro-enterprises?",
+        options: [
+          "The time taken to deliver goods to customers, causing food spoilage.",
+          "The delay in transferring digital earnings to a merchant's account, preventing them from buying daily raw inventory.",
+          "The time required to register a formal business license with the government.",
+          "The slow speed of scanning QR codes at checkout counters during peak hours.",
+          "The waiting period before commercial banks approve physical land deeds."
+        ],
+        correct: "B",
+        explanation: "'Settlement delay' adalah jeda waktu kliring saldo digital (24-48 jam) yang menyulitkan pedagang kecil membeli bahan baku harian karena kehabisan tunai instan."
+      },
+      {
+        qNum: 24,
+        skill: "Complex Inference (C5)",
+        prompt: "What can be inferred about traditional bank credit assessment standards from Paragraph 1?",
+        options: [
+          "They are specifically designed to support informal street vendors.",
+          "They inherently disadvantage informal businesses that lack formal auditing and land collateral.",
+          "They evaluate cash-flow consistency faster than fintech algorithms.",
+          "They require no paperwork or financial documentation.",
+          "They are being completely replaced by foreign physical cash reserves."
+        ],
+        correct: "B",
+        explanation: "Bank tradisional membutuhkan laporan keuangan teraudit dan agunan fisik—syarat yang secara struktural merugikan sektor usaha informal."
+      },
+      {
+        qNum: 25,
+        skill: "Evaluating Policy Interventions (C6)",
+        prompt: "What regulatory intervention does the author demand to protect micro-enterprises in Paragraph 3?",
+        options: [
+          "Banning all micro-enterprises from accepting electronic payments.",
+          "Capping merchant discount rates (MDR) and mandating real-time liquidity settlement for merchants.",
+          "Requiring micro-vendors to pay higher tax rates than multinational corporations.",
+          "Forcing customers to pay exclusively with high-denomination banknotes.",
+          "Nationalizing all private fintech credit scoring algorithms."
+        ],
+        correct: "B",
+        explanation: "Penulis merekomendasikan pembatasan atas batas biaya potongan merchant (MDR) serta kewajiban penyelesaian likuiditas instan."
+      }
+    ]
+  },
+  {
+    topicId: 6,
+    topicName: "Central Bank Digital Currency",
+    storyTitle: "Text 6 — Central Bank Digital Currencies (CBDC) vs. Traditional Cash: The Ultimate Transition",
+    storyParagraphs: [
+      "As decentralized cryptocurrencies and private e-wallets capture market share, central banks worldwide are accelerating the development of Central Bank Digital Currencies (CBDCs)—sovereign digital legal tender issued and backed directly by monetary authorities. Unlike private e-money, which represents a liability on a commercial bank's balance sheet, a CBDC is a direct digital claim on the central bank, equivalent to a physical banknote in digital form. Proponents contend that CBDCs synthesize the efficiency of digital transfers with the risk-free stability of sovereign fiat currency, modernizing national monetary architecture.",
+      "The architectural deployment of CBDCs offers transformative governance capabilities. Central banks could execute targeted monetary policy with surgical precision, deploying 'programmable money' that automatically triggers stimulus disbursements during economic recessions or enforces time-sensitive consumer spending incentives. Furthermore, CBDCs streamline cross-border interbank settlements, reducing remittance friction and eliminating the exorbitant intermediary fees charged by international correspondent banking clearinghouses.",
+      "However, civil liberties advocates warn that a fully realized CBDC ecosystem creates an unprecedented apparatus for absolute financial surveillance and state control. Unlike physical cash, which guarantees transactional anonymity, programmable digital tender allows authorities to track every financial transaction in real time, impose negative interest rates directly on individual digital wallets, or freeze the assets of political dissidents with a single keystroke. Therefore, the transition to a CBDC framework must incorporate strict privacy protocols to prevent sovereign efficiency from devolving into state authoritarianism."
+    ],
+    questions: [
+      {
+        qNum: 26,
+        skill: "Distinguishing Core Concepts (C4)",
+        prompt: "According to Paragraph 1, what fundamentally distinguishes a CBDC from private e-money?",
+        options: [
+          "CBDCs can only be spent on physical gold bullion.",
+          "CBDCs are direct legal tender liabilities of the central bank, whereas private e-money relies on commercial bank balance sheets.",
+          "Private e-money is backed by international military alliances.",
+          "CBDCs are issued exclusively by private technology startups.",
+          "Private e-money guarantees absolute transaction anonymity."
+        ],
+        correct: "B",
+        explanation: "Paragraf 1 menjelaskan beda mendasar: CBDC adalah klaim langsung/kewajiban bank sentral (setara uang kertas digital), sedangkan e-money swasta adalah kewajiban bank komersial/fintech."
+      },
+      {
+        qNum: 27,
+        skill: "Analyzing Technical Potential (C5)",
+        prompt: "What advantage does 'programmable money' offer to monetary policy makers according to Paragraph 2?",
+        options: [
+          "It allows governments to completely eliminate national taxation.",
+          "It enables precise, automated distribution of economic stimulus and time-sensitive spending incentives.",
+          "It forces commercial banks to print unlimited physical paper bills.",
+          "It prevents international tourists from spending foreign currencies.",
+          "It guarantees that stock markets never experience price drops."
+        ],
+        correct: "B",
+        explanation: "Uang terprogram (programmable money) memungkinan kebijakan moneter presisi, seperti otomatisasi penyaluran stimulus dan insentif belanja berbatas waktu."
+      },
+      {
+        qNum: 28,
+        skill: "Critiquing Governance Risks (C5)",
+        prompt: "What major threat to civil liberties is highlighted in Paragraph 3 regarding CBDCs?",
+        options: [
+          "The likelihood that digital wallets will explode physically due to server overload.",
+          "The potential for absolute state surveillance, real-time tracking, negative interest enforcement, and arbitrary asset freezing.",
+          "The risk that physical cash will become thousands of times more valuable than digital tender.",
+          "The total inability of central banks to monitor cross-border capital flows.",
+          "The requirement that citizens register political affiliations before buying groceries."
+        ],
+        correct: "B",
+        explanation: "Paragraf 3 memperingatkan bahaya surveillance absolut, hilangnya anonimitas, pemotongan suku bunga negatif langsung, hingga pembekuan aset sepihak oleh negara."
+      },
+      {
+        qNum: 29,
+        skill: "Complex Inference (C5)",
+        prompt: "Why is physical cash viewed by privacy advocates as a safeguard against authoritarian control?",
+        options: [
+          "Because physical cash cannot be used in international trading markets.",
+          "Because physical cash transactions offer peer-to-peer anonymity without digital tracking trails.",
+          "Because physical cash is immune to inflation and economic recessions.",
+          "Because commercial banks pay interest on paper bills stored in home safes.",
+          "Because central banks cannot control the total amount of printed cash."
+        ],
+        correct: "B",
+        explanation: "Uang tunai memberikan anonimitas transaksi tanpa rekam jejak digital yang bisa diawasi secara real-time oleh penguasa."
+      },
+      {
+        qNum: 30,
+        skill: "Synthesizing Core Conclusion (C6)",
+        prompt: "Which statement best summarizes the author's final warning regarding CBDC implementation?",
+        options: [
+          "CBDCs should be immediately banned to protect international credit card conglomerates.",
+          "The adoption of CBDCs must balance central bank efficiency with strong statutory privacy protections to prevent state authoritarianism.",
+          "Physical banknotes should be destroyed as soon as a national CBDC network launches.",
+          "Central banks ought to cede monetary control to decentralized cryptocurrency algorithms.",
+          "Citizens should refuse to use any digital payment infrastructure."
+        ],
+        correct: "B",
+        explanation: "Kesimpulan umum menekankan bahwa implementasi CBDC wajib mengintegrasikan perlindungan privasi yang ketat agar efisiensi moneter tidak berubah menjadi otoritarianisme negara."
+      }
+    ]
+  }
+];
+
+let currentQIndex = 0;
+let userAnswers = new Array(30).fill(null);
+let flaggedQuestions = new Set();
+let isPracticeMode = false;
+let fontScale = 1.0;
+let isDarkMode = false;
+let timerSeconds = 5400; // 90 minutes
+let timerInterval = null;
+
+let studentProfile = {
+  name: "Muhammad Farhan",
+  className: "XII MIPA 1",
+  nisn: "0061234567",
+  school: "SMAN 1 Ciracap"
+};
+
+// DOM Elements
+const landingCoverSection = document.getElementById("landingCoverSection");
+const examWorkspace = document.getElementById("examWorkspace");
+const topicNavBar = document.getElementById("topicNavBar");
+
+const storyTag = document.getElementById("storyTag");
+const storyThemeBadge = document.getElementById("storyThemeBadge");
+const storyQRange = document.getElementById("storyQRange");
+const storyTitle = document.getElementById("storyTitle");
+const storyBody = document.getElementById("storyBody");
+
+const qNumberBadge = document.getElementById("qNumberBadge");
+const skillBadge = document.getElementById("skillBadge");
+const qPrompt = document.getElementById("qPrompt");
+const qOptions = document.getElementById("qOptions");
+const feedbackBox = document.getElementById("feedbackBox");
+
+const flagBtn = document.getElementById("flagBtn");
+const flagText = document.getElementById("flagText");
+const prevQBtn = document.getElementById("prevQBtn");
+const nextQBtn = document.getElementById("nextQBtn");
+
+const paletteGrid = document.getElementById("paletteGrid");
+const progressBar = document.getElementById("progressBar");
+const answeredCount = document.getElementById("answeredCount");
+const topicPillsContainer = document.getElementById("topicPillsContainer");
+
+const modeToggleBtn = document.getElementById("modeToggleBtn");
+const modeLabel = document.getElementById("modeLabel");
+const themeToggleBtn = document.getElementById("themeToggleBtn");
+const themeIcon = document.getElementById("themeIcon");
+
+const customDialogModal = document.getElementById("customDialogModal");
+
+function getQuestionData(index) {
+  let accumulated = 0;
+  for (let t = 0; t < dataset.length; t++) {
+    const topic = dataset[t];
+    if (index < accumulated + topic.questions.length) {
+      const qInTopic = index - accumulated;
+      return {
+        topic: topic,
+        question: topic.questions[qInTopic],
+        topicIndex: t
+      };
+    }
+    accumulated += topic.questions.length;
+  }
+  return null;
+}
+
+function showLandingCover() {
+  landingCoverSection.classList.remove("hidden");
+  examWorkspace.classList.add("hidden");
+  topicNavBar.classList.add("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function handleStartExam(e) {
+  if (e) e.preventDefault();
+  
+  studentProfile.name = document.getElementById("studentNameInput").value || "Siswa TKA";
+  studentProfile.className = document.getElementById("studentClassInput").value || "XII SMA";
+  studentProfile.nisn = document.getElementById("studentNisnInput").value || "-";
+  studentProfile.school = document.getElementById("studentSchoolInput").value || "SMAN 1 Ciracap";
+
+  landingCoverSection.classList.add("hidden");
+  examWorkspace.classList.remove("hidden");
+  topicNavBar.classList.remove("hidden");
+
+  loadQuestion(0);
+  if (!timerInterval) startTimer();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function startPracticeDirectly() {
+  isPracticeMode = true;
+  modeLabel.innerText = "Mode: Latihan (Pembahasan)";
+  handleStartExam(null);
+}
+
+function renderTopicPills() {
+  topicPillsContainer.innerHTML = "";
+  dataset.forEach((t, i) => {
+    const startQ = i * 5 + 1;
+    const endQ = startQ + 4;
+    const pill = document.createElement("button");
+    const active = getQuestionData(currentQIndex).topicIndex === i;
+    
+    pill.className = `px-3 py-1.5 rounded-xl font-semibold text-xs whitespace-nowrap transition flex items-center gap-1.5 border ${
+      active
+        ? "bg-blue-600 text-white border-blue-500 shadow-sm"
+        : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700"
+    }`;
+    pill.innerHTML = `<span class="w-2 h-2 rounded-full ${active ? "bg-amber-300" : "bg-blue-500"}"></span> ${t.topicName} (${startQ}-${endQ})`;
+    pill.onclick = () => {
+      loadQuestion(i * 5);
+    };
+    topicPillsContainer.appendChild(pill);
+  });
+}
+
+function renderPalette() {
+  paletteGrid.innerHTML = "";
+  let answeredNum = 0;
+
+  for (let i = 0; i < 30; i++) {
+    const btn = document.createElement("button");
+    const isCurrent = i === currentQIndex;
+    const isAnswered = userAnswers[i] !== null;
+    const isFlagged = flaggedQuestions.has(i);
+
+    if (isAnswered) answeredNum++;
+
+    let bgClass = "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700";
+    if (isAnswered) bgClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
+    if (isFlagged) bgClass = "bg-amber-500 text-white border-amber-600 font-bold";
+    if (isCurrent) bgClass = "ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900 bg-blue-600 text-white font-extrabold";
+
+    btn.className = `h-8 sm:h-9 rounded-lg border text-xs font-mono transition flex items-center justify-center relative ${bgClass}`;
+    btn.innerText = i + 1;
+
+    if (isFlagged && !isCurrent) {
+      const dot = document.createElement("span");
+      dot.className = "absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full border border-white dark:border-slate-900";
+      btn.appendChild(dot);
+    }
+
+    btn.onclick = () => loadQuestion(i);
+    paletteGrid.appendChild(btn);
+  }
+
+  answeredCount.innerText = `${answeredNum} / 30 Terjawab`;
+  const pct = Math.round((answeredNum / 30) * 100);
+  progressBar.style.width = `${pct}%`;
+}
+
+function loadQuestion(index) {
+  currentQIndex = index;
+  const data = getQuestionData(index);
+  const topic = data.topic;
+  const q = data.question;
+
+  // Story Panel Update
+  storyTag.innerText = `Text ${data.topicIndex + 1} of 6`;
+  storyThemeBadge.innerText = topic.topicName;
+  storyQRange.innerText = `${data.topicIndex * 5 + 1} - ${data.topicIndex * 5 + 5}`;
+  storyTitle.innerText = topic.storyTitle;
+  storyBody.innerHTML = topic.storyParagraphs.map(p => `<p class="mb-3">${p}</p>`).join("");
+
+  // Question Panel Update
+  qNumberBadge.innerText = `Q${q.qNum}`;
+  skillBadge.innerText = q.skill;
+  qPrompt.innerText = q.prompt;
+
+  // Options Update
+  qOptions.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+  q.options.forEach((opt, optIdx) => {
+    const letter = letters[optIdx];
+    const isSelected = userAnswers[index] === letter;
+
+    const optBtn = document.createElement("button");
+    let borderStyle = "border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200";
+
+    if (isSelected) {
+      borderStyle = "border-blue-500 bg-blue-50 dark:bg-blue-950/40 text-blue-900 dark:text-blue-200 font-semibold ring-1 ring-blue-500";
+    }
+
+    if (isPracticeMode && isSelected) {
+      if (letter === q.correct) {
+        borderStyle = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold ring-1 ring-emerald-500";
+      } else {
+        borderStyle = "border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 font-semibold ring-1 ring-rose-500";
+      }
+    }
+
+    optBtn.className = `w-full text-left p-3 sm:p-3.5 rounded-xl border text-xs sm:text-sm transition flex items-start gap-3 ${borderStyle}`;
+    optBtn.innerHTML = `
+      <span class="w-6 h-6 rounded-lg bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 flex items-center justify-center font-bold font-mono text-xs text-slate-600 dark:text-slate-200 shrink-0 ${isSelected ? 'bg-blue-600 border-blue-600 text-white' : ''}">
+        ${letter}
+      </span>
+      <span class="pt-0.5 leading-snug">${opt}</span>
+    `;
+
+    optBtn.onclick = () => selectOption(index, letter);
+    qOptions.appendChild(optBtn);
+  });
+
+  // Flag Status
+  if (flaggedQuestions.has(index)) {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg bg-amber-500 text-white font-bold transition flex items-center gap-1";
+    flagText.innerText = "Ragu-ragu";
+  } else {
+    flagBtn.className = "px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 transition flex items-center gap-1";
+    flagText.innerText = "Ragu-ragu";
+  }
+
+  // Prev / Next button state
+  prevQBtn.disabled = index === 0;
+  nextQBtn.innerHTML = index === 29 ? `Cek Nilai <i class="fa-solid fa-check-double"></i>` : `Selanjutnya <i class="fa-solid fa-chevron-right"></i>`;
+
+  // Practice Mode Explanation Box
+  if (isPracticeMode && userAnswers[index] !== null) {
+    feedbackBox.classList.remove("hidden");
+    const isCorrect = userAnswers[index] === q.correct;
+    if (isCorrect) {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-check text-emerald-500"></i> Jawaban Anda Benar! (Kunci: ${q.correct})</strong><br><span class="mt-1 block">${q.explanation}</span>`;
+    } else {
+      feedbackBox.className = "my-4 p-4 rounded-xl text-xs sm:text-sm bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-900 dark:text-rose-200";
+      feedbackBox.innerHTML = `<strong><i class="fa-solid fa-circle-xmark text-rose-500"></i> Jawaban Kurang Tepat. Kunci Jawaban: (${q.correct})</strong><br><span class="mt-1 block">${q.explanation}</span>`;
+    }
+  } else {
+    feedbackBox.classList.add("hidden");
+  }
+
+  renderTopicPills();
+  renderPalette();
+}
+
+function selectOption(qIdx, letter) {
+  userAnswers[qIdx] = letter;
+  loadQuestion(qIdx);
+}
+
+prevQBtn.onclick = () => { if (currentQIndex > 0) loadQuestion(currentQIndex - 1); };
+nextQBtn.onclick = () => {
+  if (currentQIndex < 29) {
+    loadQuestion(currentQIndex + 1);
+  } else {
+    triggerFinishConfirmation();
+  }
+};
+
+flagBtn.onclick = () => {
+  if (flaggedQuestions.has(currentQIndex)) {
+    flaggedQuestions.delete(currentQIndex);
+  } else {
+    flaggedQuestions.add(currentQIndex);
+  }
+  loadQuestion(currentQIndex);
+};
+
+modeToggleBtn.onclick = () => {
+  isPracticeMode = !isPracticeMode;
+  modeLabel.innerText = isPracticeMode ? "Mode: Latihan (Pembahasan)" : "Mode: Ujian (Exam)";
+  loadQuestion(currentQIndex);
+};
+
+document.getElementById("fontIncBtn").onclick = () => {
+  if (fontScale < 1.3) {
+    fontScale += 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+document.getElementById("fontDecBtn").onclick = () => {
+  if (fontScale > 0.8) {
+    fontScale -= 0.1;
+    storyBody.style.fontSize = `${fontScale * 0.875}rem`;
+  }
+};
+
+themeToggleBtn.onclick = () => {
+  isDarkMode = !isDarkMode;
+  if (isDarkMode) {
+    document.documentElement.classList.add("dark");
+    themeIcon.className = "fa-solid fa-sun text-amber-400";
+  } else {
+    document.documentElement.classList.remove("dark");
+    themeIcon.className = "fa-solid fa-moon text-slate-600";
+  }
+};
+
+document.getElementById("scrollToTopStory").onclick = () => {
+  storyBody.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (timerSeconds > 0) {
+      timerSeconds--;
+      const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+      const s = (timerSeconds % 60).toString().padStart(2, '0');
+      document.getElementById("timerDisplay").innerText = `${m}:${s}`;
+    } else {
+      clearInterval(timerInterval);
+      showCustomDialog(
+        '<i class="fa-solid fa-hourglass-end text-amber-500 text-2xl"></i>',
+        "Waktu Ujian Habis!",
+        "Waktu alokasi 90 menit telah selesai. Hasil ujian Anda akan dihitung secara otomatis.",
+        [
+          {
+            text: "Lihat Hasil Ujian",
+            class: "bg-blue-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+            onClick: () => {
+              hideCustomDialog();
+              calculateResults();
+            }
+          }
+        ]
+      );
+    }
+  }, 1000);
+}
+
+function showCustomDialog(iconHTML, title, message, actionButtons) {
+  document.getElementById("dialogIconContainer").innerHTML = iconHTML;
+  document.getElementById("dialogTitle").innerText = title;
+  document.getElementById("dialogMessage").innerText = message;
+  
+  const actionsContainer = document.getElementById("dialogActions");
+  actionsContainer.innerHTML = "";
+  
+  actionButtons.forEach(btnConfig => {
+    const btn = document.createElement("button");
+    btn.className = btnConfig.class;
+    btn.innerText = btnConfig.text;
+    btn.onclick = btnConfig.onClick;
+    actionsContainer.appendChild(btn);
+  });
+
+  customDialogModal.classList.remove("hidden");
+}
+
+function hideCustomDialog() {
+  customDialogModal.classList.add("hidden");
+}
+
+function triggerFinishConfirmation() {
+  const answered = userAnswers.filter(a => a !== null).length;
+  if (answered < 30) {
+    showCustomDialog(
+      '<i class="fa-solid fa-triangle-exclamation text-amber-500 text-2xl"></i>',
+      "Ada Soal Belum Terjawab",
+      `Anda baru menyelesaikan ${answered} dari 30 soal. Apakah Anda yakin ingin mengakhiri ujian sekarang?`,
+      [
+        {
+          text: "Batal / Periksa Lagi",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Selesaikan Ujian",
+          class: "bg-blue-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  } else {
+    showCustomDialog(
+      '<i class="fa-solid fa-circle-check text-emerald-500 text-2xl"></i>',
+      "Konfirmasi Selesai Ujian",
+      "Seluruh 30 soal HOTS telah dijawab dengan lengkap. Kirim jawaban Anda sekarang?",
+      [
+        {
+          text: "Periksa Kembali",
+          class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+          onClick: hideCustomDialog
+        },
+        {
+          text: "Kirim Jawaban",
+          class: "bg-gradient-to-r from-amber-500 to-blue-600 text-white font-extrabold py-2 px-5 rounded-xl text-xs",
+          onClick: () => {
+            hideCustomDialog();
+            calculateResults();
+          }
+        }
+      ]
+    );
+  }
+}
+
+document.getElementById("finishTestBtn").onclick = triggerFinishConfirmation;
+
+function calculateResults() {
+  let score = 0;
+  let reviewHTML = "";
+
+  for (let i = 0; i < 30; i++) {
+    const qData = getQuestionData(i);
+    const q = qData.question;
+    const userAns = userAnswers[i];
+    const isCorrect = userAns === q.correct;
+    if (isCorrect) score++;
+
+    reviewHTML += `
+      <div class="p-3.5 sm:p-4 rounded-xl border ${isCorrect ? 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-300 dark:border-emerald-800' : 'bg-rose-50/50 dark:bg-rose-950/20 border-rose-300 dark:border-rose-800'} text-xs space-y-2">
+        <div class="flex items-center justify-between font-bold gap-2">
+          <span class="text-slate-800 dark:text-slate-200">
+            Soal ${i + 1}. (${qData.topic.topicName}) — ${q.prompt}
+          </span>
+          <span class="${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'} uppercase font-mono shrink-0">
+            ${isCorrect ? '✓ Benar' : '✕ Salah'}
+          </span>
+        </div>
+        <div class="text-slate-600 dark:text-slate-400">
+          Jawaban Anda: <strong>${userAns ? userAns : 'Kosong'}</strong> | Kunci Jawaban: <strong class="text-emerald-600 dark:text-emerald-400">${q.correct}</strong>
+        </div>
+        <div class="p-2.5 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+          <strong>Pembahasan Rasional:</strong> ${q.explanation}
+        </div>
+      </div>
+    `;
+  }
+
+  // Final score on scale 100
+  const finalScore100 = Math.round((score / 30) * 100);
+  document.getElementById("finalScoreVal").innerText = `${finalScore100}`;
+  document.getElementById("finalPercentage").innerText = `${score} dari 30 Soal Benar`;
+
+  // Student Profile metadata
+  document.getElementById("resStudentName").innerText = studentProfile.name;
+  document.getElementById("resStudentClass").innerText = studentProfile.className;
+  document.getElementById("resStudentSchool").innerText = studentProfile.school;
+
+  let grade = "Basic";
+  let gradeText = "Perlu Peningkatan Strategi Membaca Kritis";
+  if (finalScore100 >= 85) { 
+    grade = "Highly Proficient"; 
+    gradeText = "Sangat Terampil dalam Analisis Wacana Argumentatif HOTS"; 
+  } else if (finalScore100 >= 70) { 
+    grade = "Proficient"; 
+    gradeText = "Terampil / Memenuhi Standar Kelulusan TKA"; 
+  } else if (finalScore100 >= 55) { 
+    grade = "Basic"; 
+    gradeText = "Memahami Konsep Dasar, Perlu Penguatan Eliminasi Distraksi"; 
+  } else {
+    grade = "Needs Improvement";
+    gradeText = "Sangat Memerlukan Remedial Konsep Reading Comprehension";
+  }
+
+  document.getElementById("gradeBadge").innerText = `${grade}`;
+  document.getElementById("gradeDesc").innerText = gradeText;
+
+  const elapsedSec = 5400 - timerSeconds;
+  const elapsedMin = Math.floor(elapsedSec / 60);
+  const elapsedS = elapsedSec % 60;
+  document.getElementById("timeTakenVal").innerText = `${elapsedMin}m ${elapsedS}s`;
+
+  document.getElementById("reviewContainer").innerHTML = reviewHTML;
+  document.getElementById("resultModal").classList.remove("hidden");
+}
+
+document.getElementById("closeModalBtn").onclick = () => {
+  document.getElementById("resultModal").classList.add("hidden");
+};
+
+document.getElementById("restartTestBtn").onclick = () => {
+  showCustomDialog(
+    '<i class="fa-solid fa-rotate-right text-blue-500 text-2xl"></i>',
+    "Reset & Ulangi Ujian",
+    "Seluruh jawaban dan progress saat ini akan dihapus. Apakah Anda yakin?",
+    [
+      {
+        text: "Batal",
+        class: "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: hideCustomDialog
+      },
+      {
+        text: "Reset Sekarang",
+        class: "bg-rose-600 text-white font-bold py-2 px-4 rounded-xl text-xs",
+        onClick: () => {
+          hideCustomDialog();
+          userAnswers = new Array(30).fill(null);
+          flaggedQuestions.clear();
+          timerSeconds = 5400;
+          document.getElementById("resultModal").classList.add("hidden");
+          loadQuestion(0);
+        }
+      }
+    ]
+  );
+};
+
+document.getElementById("printResultBtn").onclick = () => {
+  window.print();
+};
+
+window.onload = function () {
+  showLandingCover();
+};
+</script>
+</body>
+</html>
